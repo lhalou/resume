@@ -1,0 +1,30 @@
+{
+  "id": "1466479",
+  "name": "漂亮的登录框",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "797079",
+      "name": "人物",
+      "font_class": "renwu",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "5671704",
+      "name": "锁头",
+      "font_class": "suotou",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "7284618",
+      "name": "对号 (2)",
+      "font_class": "duihao",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    }
+  ]
+}

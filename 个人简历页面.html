@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历页面</title>
+    <style>
+        @font-face {font-family: "iconfont";
+            src: url('iconfont.eot?t=1571390109908'); /* IE9 */
+            src: url('iconfont.eot?t=1571390109908#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALgAAsAAAAABqAAAAKTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBLIFQATYCJAMICwYABCAFhG0HMBv2BciusCnDvUiREVhcpuNV2E9mHPg4xMP/r/1vn5n77M4XTyKaDYuikljdomgmExqdXyqheCa//Z/LHKBRef7Y3SlCRfOF/JbTl2aAjo3bhJlSE3ITbkc328NoDaEojrPoXv+BozE1wXAZfgZrAcAGnAYikeeDnYXAzxeH08byQOafd7nMMWnSsDQOpHSsgVFkBRKAN4xd4BIeE8hGtRSOHNufoC6xVgXi6SPPgnrOI0ks3hTqNQeT+MTUNIvX3A18DL8f/wxCoVArWUUn7y9cGP9kJ/FAwVUfwXgJ6HgNJZaBRJytjRxXEoxYkiNlk2Bf+cFPlPo6sdc/T9RZuR1gGHLuievybpW+AInu7ABXRhVT9vYO3/r4LAL6CeQlwKPqsSeCjIhUiFDDhFpjXx14Y2RMgl3XkcjJshWzagJN/iqfP80+L4cZMJPGb3JSbYyPfwRP4+H7MRMzccuX4X4/e5DVO9zbhZYbA7SVB+XOX/2Nr3Ufmu74P1UCPx6H0NWW9LOB5rmtwT/k9qxLOt/SFknl1iYKO0r3VpJltMOOPn9jFYM3bArNHJdBoWEESk3TyIRdhprKNtQ17UK2ZHW80k+URGph0TOA0OMbCl2+Q6nHDzJhf6FmyD/U9QQP2fnwL6zMRpurZ2QpuWjfYuBwahy9NqP8A3mXsSVZfki6IMkDP/ZX14vxFaUkc2zJr7yBqkEjnOASPEdxzJgJh+Rox1fNRt21+3Vv6jicQNNhglgUcSHbLRRwsJTx26tm6fMHxHMpZpGWmhrjBSJyQe+or6PXA7mSpL1q7uWV3BXPgFIGMgRLoCWYR2IxhrL6eSHiUB3+iFBmpGs3M30lnfVlydftgMxSFmHPKtUfP7J8iwEAAA==') format('woff2'),
+            url('iconfont.woff?t=1571390109908') format('woff'),
+            url('iconfont.ttf?t=1571390109908') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+            url('iconfont.svg?t=1571390109908#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 20px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <style type = "text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .layout {
+            width: 700px;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            color: rgba(0,0,0,0.8);
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: normal;
+        }
+        #header {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .thumbnail {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .thumbnail .avator {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: #000;
+            margin: 10px 20px 10px 0;
+            color: #fff;
+            font-size: 24px;
+            position: relative;
+        }
+        .thumbnail .avator:before {
+            content: 'D';
+            position: absolute;
+            top: 10px;
+            left: 40px;
+        }
+        .thumbnail .avator:after {
+            content: 'S';
+            position: absolute;
+            top: 50px;
+            right: 30px;
+        }
+        .thumbnail .avator span{
+            display: inline-block;
+            width: 50px;
+            height: 2px;
+            transform: translate(30px, 20px) rotate(-45deg);
+            background: #fff;
+        }
+        .name h1 {
+            font-size: 36px;
+            color: rgba(0,0,0,0.8);
+            font-weight: normal;
+        }
+        .contacts {
+            flex-grow: 1;
+        }
+        .contacts h4{
+            padding-bottom: 5px;
+            border-bottom: 4px solid black;
+        }
+        .contacts ul{
+            list-style: none;
+            font-weight: normal;
+            color: rgba(0,0,0,0.5);
+        }
+        .contacts ul>li:first-letter {
+            font-weight: bold;
+            font-size: 16px;
+            color: #000;
+        }
+        #main {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .experience, .education, .activities, .skills{
+            position: relative;
+        }
+        .experience:before, .education:before, .activities:before, .skills:before {
+            display: inline-block;
+            content: '';
+            width: 400px;
+            height: 1px;
+            background: #ccc;
+            position: absolute;
+            top: 30px;
+            left: 0;
+        }
+        .activities:before, .skills:before {
+            width: 350px;
+        }
+        .contentOne, .contentTwo, .contentS, .contentFour, .contentFive {
+            position: relative;
+        }
+        .contentOne:before, .contentTwo:before, .contentS:before,
+        .contentFour:before, .contentFive:before {
+            display: inline-block;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+            top: 15px;
+            left: -60px;
+        }
+        .experience .contentOne:after,.experience .contentTwo:after,
+        .contentFour:after {
+            content: '';
+            width: 1px;
+            height: 100%;
+            color: #000;
+            position: absolute;
+            background: #000;
+            left: -55px;
+            top: 15px;
+        }
+        #main p:after {
+            display: inline-block;
+            content: '';
+            width: 1px;
+            height: 64px;
+            color: #000;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+        }
+        h3 {
+            padding-bottom: 6px;
+        }
+        #main .ct1,#main .ct2 {
+            padding-left: 100px;
+        }
+        #main span {
+            color: #ccc;
+        }
+        h4,p {
+            padding-top: 8px;
+        }
+        #main .experience {
+            padding-bottom: 20px;
+        }
+        #footer {
+            display: flex;
+            flex-direction: row;
+        }
+        #footer .activities {
+            width: 50%;
+            margin-right: 10px;
+        }
+        #footer .contentSix {
+            margin-left: 100px;
+        }
+        .ct3 .iconfont {
+            float: left;
+            margin-left: 20px;
+        }
+        .ct3:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #footer .skills {
+            width: 50%;
+        }
+        #footer .skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+           justify-content: space-between;
+        }
+        .skills ul>li {
+            margin: 5px 0 0 0;
+            width: 50%;
+
+        }
+        .skills ul li>span {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id = "header" class = "layout">
+    <div class = "thumbnail">
+        <div class = "avator">
+            <span></span>
+        </div>
+        <div class = "name">
+            <h1>Lang Miao</h1>
+            <P>Web Design</P>
+        </div>
+    </div>
+    <div class = "contacts">
+        <h4>CONTACTS</h4>
+        <ul>
+            <li>A  614124284@qq.com</li>
+            <li>B  123 456 789</li>
+            <li>C  61235678</li>
+            <li>D  lili@email</li>
+        </ul>
+    </div>
+</div>
+<div id = "main" class = "layout">
+    <div class = "experience">
+        <h3>WORK EXPERIENCE</h3>
+        <div class = "content ct1">
+            <div class = "contentOne">
+                <h4>Gu Li Na Zha / <span>2012-2013</span></h4>
+                <p>
+                    古力娜扎（Gulnazar），1992年5月2日出生于新疆乌鲁木齐市，中国内地影视女演员、时尚模特。2011年，古力娜扎考入北京电影学院表演系本科班就读；同年，她签约上海唐人电影制作有限公司，并出演个人首部电视剧《轩辕剑之天之痕》，而她也因此被观众熟知。
+                </p>
+            </div>
+            <div class = "contentTwo">
+                <h4>Yang Ming/ <span>2013-2014</span></h4>
+                <p>
+                    杨幂，1986年9月12日出生于北京市，中国内地影视女演员、流行乐歌手、影视制片人。2005年，杨幂进入北京电影学院表演系本科班就读。2006年，杨幂因出演金庸武侠剧《神雕侠侣》而崭露头角。2008年，她凭借古装剧《王昭君》获得了第24届中国电视金鹰奖观众喜爱的电视剧女演员奖提名
+                </p>
+            </div>
+            <div class = "contentS">
+                <h4>Zhao Li Ying / <span>2014-2014</span></h4>
+                <p>
+                    赵丽颖，1987年10月16日出生于河北省廊坊市，中国内地影视女演员、歌手。2006年，因获得雅虎搜星比赛冯小刚组冠军而进入演艺圈；同年，在冯小刚执导的广告片《跪族篇》中担任女主角。2011年，因在古装剧《新还珠格格》中饰演晴儿一角而被观众认识。
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class = "education">
+        <h3>EDUCATION</h3>
+        <div class = "content ct2">
+            <div class = "contentFour">
+                <h4>Du Jiang / <span>2014-2014</span></h4>
+                <span>shanghai university</span>
+                <p>
+                    杜江1985年9月10日出生于山东省济南市，中国内地影视男演员，毕业于上海戏剧学院。2007年，出演个人首部电视剧《钻石王老五的艰难爱情》，从而正式进入演艺圈。2009年，出演个人首部电影《白银帝国》。
+                </p>
+            </div>
+            <div class = "contentFive">
+                <h4>Huo Si Yan/ <span>2013-2014</span></h4>
+                <span> beijing university</span>
+                <p>
+                    霍思燕，1980年10月23日出生于北京市海淀区，中国内地女演员。2000年2月，出演个人首部作品《贫嘴张大民的幸福生活》，从而正式进入娱乐圈。2001年，因在古装喜剧《铁齿铜牙纪晓岚》中饰演香草而崭露头角。
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id = "footer" class = "layout">
+    <div class = "activities">
+        <h3>EXTRA CURRICULAR ACTIVITIES</h3>
+        <div class = "ct3">
+            <p class = "iconfont">&#xe685</p>
+            <div class = "contentSix">
+                <h4>Volunteer</h4>
+                <p>
+                    志愿者是指志愿贡献个人的时间及精力
+                </p>
+            </div>
+            <p class = "iconfont">&#xe685</p>
+            <div class = "contentSix">
+                <h4>Volunteer</h4>
+                <p>
+                    志愿者是指志愿贡献个人的时间及精力
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class = "skills">
+        <h3>PROFESIONAL SKILLS</h3>
+        <ul>
+            <li>
+                <span class = "iconfont">&#xe685</span>
+                <span>HTML&CSS</span>
+            </li>
+            <li>
+                <span class = "iconfont">&#xe685</span>
+                <span>JavaScript</span>
+            </li>
+            <li>
+                <span class = "iconfont">&#xe685</span>
+                <span>SLIM</span>
+            </li>
+            <li>
+                <span class = "iconfont">&#xe685</span>
+                <span>JQUERY</span>
+            </li>
+            <li>
+                <span class = "iconfont">&#xe685</span>
+                <span>PHOTOSHOP</span>
+            </li>
+            <li>
+                <span class = "iconfont">&#xe685</span>
+                <span>VUE</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
